@@ -1,0 +1,11 @@
+__pycache__
+*.pyc
+.env
+.cache
+node_modules
+natepalmer_website/static/dist
+natepalmer_website/static_root
+.env
+/local
+media
+yarn-error.log

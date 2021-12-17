@@ -1,0 +1,32 @@
+{
+  "name": "natepalmer_website",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run build-js && npm run build-css",
+    "start": "concurrently \"npm:watch-css\" \"npm:watch-js\"",
+    "watch-css": "postcss assets/css/index.css -o natepalmer_website/static/dist/index.css -w",
+    "build-css": "cross-env ENV_BUILD=prod postcss assets/css/index.css -o natepalmer_website/static/dist/index.css",
+    "watch-js": "esbuild assets/js/index.js --bundle --sourcemap=inline --target=es2016 --outfile=natepalmer_website/static/dist/index.js --watch",
+    "build-js": "esbuild assets/js/index.js --bundle --minify --target=es2016 --outfile=natepalmer_website/static/dist/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "concurrently": "^6.4.0",
+    "esbuild": "^0.14.2",
+    "eslint": "6.x",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "4.7.0",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "3.0.0",
+    "postcss": "^8.4.4",
+    "postcss-cli": "^9.0.2",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "^5.0.6",
+    "prettier": "^2.0.2",
+    "sass": "^1.23.6"
+  }
+}
